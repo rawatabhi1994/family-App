@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/image_profile"
+            android:layout_weight="1"
+            android:padding="@dimen/input_padding"
+            android:src="@drawable/add_profile"
+            app:civ_border_width="2dp"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tviewName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/input_padding"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/tviewDOB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/input_padding"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/tviewAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/input_padding"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/tviewContactInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/input_padding"
+                android:textSize="@dimen/text_size" />
+
+            <GridLayout
+                android:id="@+id/imagesGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageTrash"
+                    android:layout_width="@dimen/home_icon"
+                    android:layout_height="@dimen/home_icon"
+                    android:clickable="true"
+                    android:padding="@dimen/input_padding"
+                    android:src="@drawable/trash"
+                    app:civ_border_width="2dp"
+
+                    />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageEdit"
+                    android:layout_width="@dimen/home_icon"
+                    android:layout_height="@dimen/home_icon"
+                    android:clickable="true"
+                    android:padding="@dimen/input_padding"
+                    android:src="@drawable/edit"
+                    app:civ_border_width="2dp"
+                    />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/home_icon"
+                    android:layout_height="@dimen/home_icon"
+                    android:clickable="true"
+                    android:padding="@dimen/input_padding"
+                    android:src="@drawable/view_individual"
+                    app:civ_border_width="2dp"
+                    />
+            </GridLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

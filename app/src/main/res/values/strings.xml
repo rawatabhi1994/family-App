@@ -1,0 +1,150 @@
+<resources>
+    <string name="app_name">YourFamily</string>
+    <string name="splash_text">Build Data For Family</string>
+    <string name="drawable_text">&#x22ee;</string>
+    <string name="app_title">Build Data</string>
+    <string name="help">Help&#xa0;&#x3f;</string>
+    <string name="tv_next">&#xa0;&#x2192;</string>>
+    <string name="username">User Name or Id</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="createAccount">Create Account</string>
+    <string name="backArrow">&#xa0;&#x2190;&#xa0;</string>
+    <string name="add_member"> Add Member</string>
+    <string name="dob_hint">MM/DD/YYYY</string>
+    <string name="email_hint">Email</string>
+    <string name="address">Address</string>
+    <string name="houseAddress">House Address</string>
+    <string name="pincode">Pincode</string>
+    <string name="state">State or Union Territory</string>
+    <string name="country">Country</string>
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="relation">Relation</string>
+    <string name="hint_select">Select</string>
+    <string name="hint_phone_number_one">Contact Number 1</string>
+    <string name="hint_phone_number_two">Contact Number 2</string>
+    <string name="hint_dl">Driving Licence</string>
+    <string name="tview_imp_ids">Important IDS </string>
+    <string name="contact_information">Contact Information</string>
+    <string name="hint_aadhar_id">Aadhar ID</string>
+    <string name="hint_voter_id">Voter ID</string>
+    <string name="hint_pan_id">PAN ID</string>
+    <string name="hint_qualification">Qualification</string>
+    <string name="hint_tenth_board_and_school">HighSchool Board And School</string>
+    <string name="hint_tenth_percentage">HighSchool Passing Percentage</string>
+    <string name="hint_intermediate_board_and_school">Intermediate Board And School</string>
+    <string name="hint_intermediate_percentage">Intermediate Passing Percentage</string>
+    <string name="hint_grad_univ_college">Graduation University Or College</string>
+    <string name="hint_grad_completion_year">Graduation Completion Year</string>
+    <string name="hint_post_grad_univ_college">Post Graduation University Or College</string>
+    <string name="hint_post_grad_completion_year">Post Graduation Completion Year</string>
+    <string name="educational_qualification">Educational Qualification</string>
+    <string name="employment_status">Employment Status</string>
+    <string name="view_data">View Data</string>
+    <string name="name_text">Name</string>
+    <string name="dob_text">D.O.B</string>
+    <string name="email_text">Email</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="do_you_have_aadhar_no">Do you Have Aadhar No ?</string>
+    <string name="do_you_have_pan_no">Do you Have PAN No ?</string>
+    <string name="do_you_have_voter_id">Do you Have Voter Id?</string>
+    <string name="do_you_have_driving_id">Do you Have Driving Licence Id?</string>
+    <string name="are_you_post_graduate">Are You Post Graduate ?</string>
+    <string name="are_you_graduate">Are You Graduate ?</string>
+    <string name="are_you_inter_passout">Are You Inter Pass Out ?</string>
+    <string name="are_you_high_school_passout">Are You High School Passout ?</string>
+    <string name="text_high_school">High School Name And Board</string>
+    <string name="text_high_school_percent">High School Percentage</string>
+    <string name="text_intermediate">InterMediate College Name And Board</string>
+    <string name="text_intermediate_percent">Intermediate Percentage</string>
+    <string name="text_graduate_college">Graduation College</string>
+    <string name="text_graduate_percent"> Graduation Percentage</string>
+    <string name="text_post_graduate_college">Post Graduation College</string>
+    <string name="text_post_graduate_year">PostGraduate Year</string>
+    <string name="are_you_employed_or_unemployed">Are You Employed Or Unemployed ?</string>
+    <string name="view_member">View Member</string>
+    <string name="hint_emp_company">Company Name</string>
+    <string name="hint_emp_company_address">Company Address</string>
+    <string name="view_you_data_delete_member_edit_information">View Family\n\nEdit Individual Details\n\nDelete Individual Data</string>
+    <string name="add_family_member">Add Family Member</string>
+    <string name="add_photos_to_your_album">View Album\n\nAdd Photos Of Your Family Member</string>
+    <string name="Album">Your Album</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+    <string name="About_Us">
+PROPRIETARY RIGHTS
+VIDEO AND OTHER RICH MEDIA DISCLAIMER
+ABOUT THIS WEBSITE
+MOBILE APP DISCLAIMER
+Mobile App Disclaimers
+(rev. 11/30/2015)
+Copyright
+
+Users are free to download and use this mobile app for informational, educational and research purposes only. See Terms of Use for additional information. (c) Medical College of Wisconsin and UW-Milwaukee. All rights reserved. May not be used or reproduced without permission by owners.
+
+Disclaimer
+
+This mobile app is intended for informational, educational and research purposes only. It is not, and is not intended, for use in the diagnosis of disease or other conditions, or in the cure, mitigation, treatment, or prevention of disease, in man or other animals. Health care providers should exercise their own independent clinical judgment when using the mobile app in conjunction with patient care.
+
+Terms of Use
+
+This mobile app is provided for informational, educational and research purposes only. Use of the material for any other purpose constitutes infringement of the copyright and intellectual property rights owned by the specific owners for the app. By using any of this material, you assume all risks of copyright infringement and related liability. This app and its content may not be reproduced or used for unauthorized purposes without prior written permission, which may be obtained by submitting a written request to: Medical College of Wisconsin, 8701 Watertown Plank Road, Milwaukee, WI 53226, Attn: Office of Technology Development. Note this mobile app may contain copyrighted work created under contract with government agencies, foundations, funding organizations and commercial companies, etc. If the app owners place further restrictions on the material, you must honor those restrictions regardless of whether such restrictions are described in this mobile app.</string>
+    <string name="contact_or_mobile_no">Mobile No. or Contact No.</string>
+    <string name="about_us">About Us</string>
+    <string name="create_account">Create Account</string>
+    <string name="Confirm">Confirm</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string-array name="relations">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Son</item>
+        <item>Daughter</item>
+        <item>Grand Father</item>
+        <item>Grand Mother</item>
+    </string-array>
+    <string-array name="state">
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgarh</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha (Orissa)</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
+        <item>Andaman and Nicobar Islands</item>
+        <item>Chandigarh</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Delhi</item>
+        <item>Lakshadweep</item>
+        <item>Puducherry</item>
+        <item>Daman and Diu</item>
+    </string-array>
+    <string-array name="Qualification">
+        <item>Under Graduate</item>
+        <item>Graduate</item>
+        <item>Post Graduate</item>
+    </string-array>
+</resources>

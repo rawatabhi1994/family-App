@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="image_dim">150dp</dimen>
+    <dimen name="image_profile">100dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+    <dimen name="width_50">50dp</dimen>
+    <dimen name="dimen_for_left_drawable">50dp</dimen>
+    <dimen name="text_size">12sp</dimen>
+    <dimen name="header_text_size">15sp</dimen>
+    <dimen name="header_height">60dp</dimen>
+    <dimen name="margin_from_header">50dp</dimen>
+    <dimen name="input_padding">5dp</dimen>
+    <dimen name="home_icon">80dp</dimen>
+    <dimen name="check_box_question">15sp</dimen>
+    <dimen name="drawer_width">240dp</dimen>
+</resources>

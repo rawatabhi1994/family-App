@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.abhirawat.yourfamily.ShowMemberData">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/header_color">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/tvBack"
+            android:layout_width="@dimen/home_icon"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:onClick="Home"
+            android:padding="@dimen/padding_10"
+            android:src="@drawable/home_icon"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/padding_10"
+            android:text="@string/view_data"
+            android:textColor="@color/white"
+            android:textSize="@dimen/header_text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl1"
+        android:padding="@dimen/padding_10">
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardViewOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/padding_10"
+            android:layout_marginStart="@dimen/padding_10"
+            card_view:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/padding_10">
+
+                <TextView
+                    android:id="@+id/tViewRelation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:id="@+id/rlName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tViewRelation"
+                    android:padding="@dimen/padding_10">
+
+                    <TextView
+                        android:id="@+id/tviewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/name_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewNameValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginLeft="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlDob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlName"
+                    android:padding="@dimen/padding_10">
+
+                    <TextView
+                        android:id="@+id/tviewDob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/dob_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewDobValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginLeft="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlDob"
+                    android:padding="@dimen/padding_10">
+
+                    <TextView
+                        android:id="@+id/tviewEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/email_text"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewEmailValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginLeft="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rlAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlEmail"
+                    android:layout_marginTop="@dimen/margin_from_header">
+
+                    <TextView
+                        android:id="@+id/tviewHouseAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/houseAddress"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewHouseAddressValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewPincode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewHouseAddress"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/pincode"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewPincodeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewHouseAddressValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewPincode"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/state"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewStateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewPincodeValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:layout_toRightOf="@+id/tviewState"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlAddress"
+                    android:layout_marginTop="@dimen/margin_from_header">
+
+                    <TextView
+                        android:id="@+id/tviewContact1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/hint_phone_number_one"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewContact1Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewContact2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewContact1"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/hint_phone_number_two"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewContact2Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewContact1"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlContact"
+                    android:layout_marginTop="@dimen/margin_from_header">
+
+                    <TextView
+                        android:id="@+id/tviewAadhar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/hint_aadhar_id"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewAadharValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewVoterId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewAadhar"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/hint_voter_id"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewVoterIdValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewAadharValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewPanId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewVoterId"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/hint_pan_id"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewPanIdValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewVoterIdValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewDl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewPanId"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/hint_dl"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewDlValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewPanIdValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlEducationDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlID"
+                    android:layout_marginTop="@dimen/margin_from_header">
+
+                    <TextView
+                        android:id="@+id/tviewHighSchool"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/text_high_school"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewHighSchoolValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewHighSchoolPercentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewHighSchool"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/text_high_school_percent"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewHighSchoolPercentageValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewHighSchoolValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewIntermediateCollege"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewHighSchoolPercentage"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/text_intermediate"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewIntermediateCollegeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewHighSchoolPercentageValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:layout_toRightOf="@+id/tviewIntermediateCollege"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewIntermediatePercentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewIntermediateCollege"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/text_intermediate_percent"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewIntermediatePercentageValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewIntermediateCollegeValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewGraduateCollege"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewIntermediatePercentage"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/text_graduate_college"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewGraduateCollegeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewIntermediatePercentageValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewGraduateYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewGraduateCollege"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/text_graduate_college"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewGradtuateYearValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewGraduateCollegeValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewPostGraduateCollege"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewGraduateYear"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/text_post_graduate_college"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewPostGraduateCollegeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewGradtuateYearValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewPostGraduateYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tviewPostGraduateCollege"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/text_post_graduate_year"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewPostGradtuateYearValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewPostGraduateCollegeValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeEmployement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlEducationDetails">
+
+                    <TextView
+                        android:id="@+id/tviewEmpCompany"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/hint_emp_company"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewEmpCompanyValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewEmpCompanyAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/tviewEmpCompany"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:text="@string/hint_emp_company_address"
+                        android:textSize="@dimen/text_size" />
+
+                    <TextView
+                        android:id="@+id/tviewEmpCompanyAddressValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@+id/tviewEmpCompanyValue"
+                        android:layout_margin="@dimen/padding_10"
+                        android:padding="@dimen/input_padding"
+                        android:textSize="@dimen/text_size" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </ScrollView>
+</RelativeLayout>

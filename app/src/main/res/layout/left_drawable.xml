@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_input"
+    android:padding="@dimen/padding_10">
+
+    <ImageView
+        android:id="@+id/left_drawable_icon"
+        android:layout_width="@dimen/dimen_for_left_drawable"
+        android:layout_height="@dimen/dimen_for_left_drawable"
+        />
+
+    <TextView
+        android:id="@+id/left_drawable_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_toRightOf="@+id/left_drawable_icon"
+        android:padding="@dimen/input_padding"
+        android:textSize="@dimen/text_size"
+        />
+</RelativeLayout>
