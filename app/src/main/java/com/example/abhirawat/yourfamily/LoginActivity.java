@@ -2,6 +2,7 @@ package com.example.abhirawat.yourfamily;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +31,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private TextView tViewData;
     private FirebaseDatabase database;
     private DatabaseReference myParentRef, myRef;
+    private UserAccountClass users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             }
         });*/
+        SharedPreferencesForMemberData sharedPreferencesForMemberData = new SharedPreferencesForMemberData();
+        String user = sharedPreferencesForMemberData.getUserAccount(this);
+        if (!user.equals("")) {
+            Gson gson = new Gson();
+            users = gson.fromJson(user, UserAccountClass.class);
+            editUsername.setText(users.getUsername());
+            editPassword.setText(users.getPassword());
+        }
+
     }
 
     public void findViews() {
@@ -67,12 +79,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnlogin:
-                if (editUsername.getText().toString().equals("admin") && editPassword.getText().toString().equals("1234")) {
-                  /*  myParentRef.child("UserName").setValue(editUsername.getText().toString());
-                    myParentRef.child("Password").setValue(editPassword.getText().toString());
-                    myParentRef.child("Age").setValue("23");*/
+                if (editUsername.getText().toString().equals(users.getUsername()) || editPassword.getText().toString().equals(users.getPassword())) {
                     Intent intent = new Intent(this, DataActivity.class);
                     startActivity(intent);
+
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setCancelable(false)

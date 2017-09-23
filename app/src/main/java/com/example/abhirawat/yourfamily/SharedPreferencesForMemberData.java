@@ -12,6 +12,7 @@ import com.google.gson.Gson;
 public class SharedPreferencesForMemberData {
     private static final String MEMBER_DATA = "FAMILY_MODEL";
     private static final String MEMBER = "FAMILY_MEMBER";
+    private static final String ACCOUNT_HOLDER = "ACCOUNT_HOLDER";
 
     public void setFamilyData(Context context, FamilyDao dao) {
         Gson gson = new Gson();
@@ -33,5 +34,20 @@ public class SharedPreferencesForMemberData {
         SharedPreferences sharedPref = context.getSharedPreferences(MEMBER_DATA, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPref.edit();
         edit.clear();
+    }
+
+    public void setUserAccount(Context context, UserAccountClass user) {
+        Gson gson = new Gson();
+        String userData = gson.toJson(user);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(MEMBER_DATA, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(ACCOUNT_HOLDER, userData);
+        editor.commit();
+
+    }
+
+    public String getUserAccount(Context context) {
+        SharedPreferences preferences = context.getSharedPreferences(MEMBER_DATA, Context.MODE_PRIVATE);
+        return preferences.getString(ACCOUNT_HOLDER, "");
     }
 }
