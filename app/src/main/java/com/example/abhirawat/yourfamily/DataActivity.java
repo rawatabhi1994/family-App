@@ -51,7 +51,7 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         addPhotos.setOnClickListener(this);
         viewMember.setOnClickListener(this);
         addMember.setOnClickListener(this);
-        icon = new int[]{R.drawable.myaccount, R.drawable.save, R.drawable.rateus};
+        icon = new int[]{R.drawable.myaccount, R.drawable.save, R.drawable.rateus, R.drawable.logout};
         leftDrawable = (DrawerLayout) findViewById(R.id.drawer_layout);
         leftDrawableList = (ListView) findViewById(R.id.list_left_drawer);
         setListeAdapterForDrawableList();
@@ -74,6 +74,9 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
                 if (i == 2) {
                     Intent intent = new Intent(DataActivity.this, AboutActivity.class);
                     startActivity(intent);
+                } else if (i == 4) {
+                    Intent intent = new Intent(DataActivity.this, LoginActivity.class);
+                    startActivity(intent);
                 }
             }
         });
@@ -94,15 +97,20 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         obj3.setLeftDrawableText("RateUs");
         obj3.setLeftDrawableIcon(icon[2]);
         list.add(obj3);
+        LeftDrawableClass obj4 = new LeftDrawableClass();
+        obj4.setLeftDrawableText("Logout");
+        obj4.setLeftDrawableIcon(icon[3]);
+        list.add(obj4);
         View view = getLayoutInflater().inflate(R.layout.header, leftDrawableList, false);
         leftDrawableList.addHeaderView(view);
         leftDrawableList.setAdapter(new LeftDrawableAdapter(this, list));
     }
-    public void next(View view)
-    {
-        Intent intent = new Intent(this,AboutActivity.class);
+
+    public void next(View view) {
+        Intent intent = new Intent(this, AboutActivity.class);
         startActivity(intent);
     }
+
     @Override
     public void onPostCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onPostCreate(savedInstanceState, persistentState);

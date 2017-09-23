@@ -56,8 +56,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });*/
     }
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onStart() {
+        super.onStart();
         SharedPreferencesForMemberData sharedPreferencesForMemberData = new SharedPreferencesForMemberData();
         String user = sharedPreferencesForMemberData.getUserAccount(this);
         if (!user.equals("")) {
