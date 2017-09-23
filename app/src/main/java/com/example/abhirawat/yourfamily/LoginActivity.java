@@ -54,6 +54,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             }
         });*/
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
         SharedPreferencesForMemberData sharedPreferencesForMemberData = new SharedPreferencesForMemberData();
         String user = sharedPreferencesForMemberData.getUserAccount(this);
         if (!user.equals("")) {
@@ -62,7 +66,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             editUsername.setText(users.getUsername());
             editPassword.setText(users.getPassword());
         }
-
     }
 
     public void findViews() {
