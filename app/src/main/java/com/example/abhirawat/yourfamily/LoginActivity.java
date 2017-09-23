@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setCancelable(false)
-                            .setMessage("Error in logging in Please Check credentials").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            .setMessage("Error in logging in Please Check Credentials").setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.cancel();
