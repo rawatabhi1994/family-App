@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="padding_10">20dp</dimen>
+    <dimen name="my_account_dim">30dp</dimen>
     <dimen name="margin_10">20dp</dimen>
     <dimen name="image_dim">250dp</dimen>
     <dimen name="image_profile">150dp</dimen>

@@ -71,7 +71,10 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
         leftDrawableList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (i == 2) {
+                if (i == 1) {
+                    Intent intent = new Intent(DataActivity.this, MyAccountActivity.class);
+                    startActivity(intent);
+                } else if (i == 2) {
                     Intent intent = new Intent(DataActivity.this, AboutActivity.class);
                     startActivity(intent);
                 } else if (i == 4) {

@@ -27,7 +27,8 @@
         <activity android:name=".ViewMemberActivity" />
         <activity android:name=".ViewAlbumActivity" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".CreateAccountActivity"></activity>
+        <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".MyAccountActivity"></activity>
     </application>
 
 </manifest>

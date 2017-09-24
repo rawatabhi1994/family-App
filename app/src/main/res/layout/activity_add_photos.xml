@@ -35,4 +35,29 @@
             android:textSize="@dimen/header_text_size"
             android:textStyle="bold" />
     </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editImageName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl1"
+        android:padding="@dimen/input_padding"
+        />
+
+    <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="@dimen/image_dim"
+        android:layout_height="@dimen/width_50"
+        android:layout_below="@+id/editImageName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/padding_10"
+        android:background="@drawable/custom_border"
+        android:text="@string/upload_photos"
+        android:textColor="@color/white" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewForDownloadedImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uploadButton" />
 </RelativeLayout>
