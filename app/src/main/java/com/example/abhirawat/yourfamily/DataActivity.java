@@ -78,8 +78,7 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
                     Intent intent = new Intent(DataActivity.this, AboutActivity.class);
                     startActivity(intent);
                 } else if (i == 4) {
-                    Intent intent = new Intent(DataActivity.this, LoginActivity.class);
-                    startActivity(intent);
+                    finish();
                 }
             }
         });

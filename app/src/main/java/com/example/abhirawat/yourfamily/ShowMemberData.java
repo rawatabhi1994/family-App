@@ -24,13 +24,11 @@ public class ShowMemberData extends AppCompatActivity {
         setContentView(R.layout.activity_show_member_data);
         getViews();
         intent = getIntent();
-        if(intent.hasExtra("MemberDataModel")) {
+        if (intent.hasExtra("MemberDataModel")) {
             dataModel = (MemberDataModel) intent.getSerializableExtra("MemberDataModel");
             sharedPreferencesForMemberData = new SharedPreferencesForMemberData();
             setData();
-        }
-        else if(intent.hasExtra("MemberDataModelView"))
-        {
+        } else if (intent.hasExtra("MemberDataModelView")) {
             dataModel = (MemberDataModel) intent.getSerializableExtra("MemberDataModelView");
             sharedPreferencesForMemberData = new SharedPreferencesForMemberData();
             setDataForView();
@@ -55,7 +53,7 @@ public class ShowMemberData extends AppCompatActivity {
         tViewPanId = (TextView) findViewById(R.id.tviewPanIdValue);
         tViewDl = (TextView) findViewById(R.id.tviewDlValue);
         tViewHighSchoolDetail = (TextView) findViewById(R.id.tviewHighSchoolValue);
-        tViewHighSchoolPercent = (TextView) findViewById(R.id.tviewHighSchoolValue);
+        tViewHighSchoolPercent = (TextView) findViewById(R.id.tviewHighSchoolPercentageValue);
         tViewIntermediate = (TextView) findViewById(R.id.tviewIntermediateCollegeValue);
         tViewIntermediatePercent = (TextView) findViewById(R.id.tviewIntermediatePercentageValue);
         tViewGraduateCollg = (TextView) findViewById(R.id.tviewGraduateCollegeValue);
@@ -96,8 +94,8 @@ public class ShowMemberData extends AppCompatActivity {
         tViewEmpCompanyAddress.setText(details.getEmpAddress() + "");
         setPreferences();
     }
-    public void setDataForView()
-    {
+
+    public void setDataForView() {
         tViewName.setText(dataModel.getFirstName() + " " + dataModel.getMiddleName() + " " + dataModel.getLastName());
         tViewDob.setText(dataModel.getDob());
         tViewEmail.setText(dataModel.getEmail());

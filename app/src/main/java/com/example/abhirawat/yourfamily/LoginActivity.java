@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseDatabase database;
     private DatabaseReference myParentRef, myRef;
     private UserAccountClass users;
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,16 +56,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });*/
     }
+
     @Override
     protected void onStart() {
         super.onStart();
         SharedPreferencesForMemberData sharedPreferencesForMemberData = new SharedPreferencesForMemberData();
-        String user = sharedPreferencesForMemberData.getUserAccount(this);
+        user = sharedPreferencesForMemberData.getUserAccount(this);
         if (!user.equals("")) {
             Gson gson = new Gson();
             users = gson.fromJson(user, UserAccountClass.class);
             editUsername.setText(users.getUsername());
             editPassword.setText(users.getPassword());
+        } else {
+            editUsername.setText("");
+            editPassword.setText("");
         }
     }
 
@@ -82,14 +87,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnlogin:
-                if (editUsername.getText().toString().equals(users.getUsername()) || editPassword.getText().toString().equals(users.getPassword())) {
-                    Intent intent = new Intent(this, DataActivity.class);
-                    startActivity(intent);
+                String username = "", password = "";
+                if (!user.equals("")) {
+                    username = users.getUsername();
+                    password = users.getPassword();
+                }
+                if (!username.equals("") || !password.equals(""))
 
+                {
+                    if (editUsername.getText().toString().equals(username) || editPassword.getText().toString().equals(users.getPassword())) {
+                        Intent intent = new Intent(this, DataActivity.class);
+                        startActivity(intent);
+                    }
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setCancelable(false)
-                            .setMessage("Error in logging in Please Check Credentials").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            .setMessage("Error in logging in Please Check Credentials or Create Account").setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.cancel();

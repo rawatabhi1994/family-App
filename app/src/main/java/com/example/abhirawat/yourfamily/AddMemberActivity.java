@@ -19,6 +19,9 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -50,6 +53,8 @@ public class AddMemberActivity extends AppCompatActivity implements View.OnClick
     private String firstName, lastName, relationship;
     private Intent intent;
     private boolean personalDetailFlag, addressFlag, importantIdFlag, contactFlag, EducationalQualificationFlag;
+    private FirebaseDatabase firebaseDatabse;
+    private DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +73,12 @@ public class AddMemberActivity extends AppCompatActivity implements View.OnClick
         setViews();
         setRadioGroup();
         setViewVisibilityGone();
+        setReferences();
+    }
+
+    public void setReferences() {
+        firebaseDatabse = new FireBaseConnection().getFirebaseConnection();
+        reference = firebaseDatabse.getReference("FAMILY_MEMBER");
     }
 
     public void setViews() {
@@ -371,10 +382,8 @@ public class AddMemberActivity extends AppCompatActivity implements View.OnClick
     public void emailCheck() {
         boolean value = emailValidator(edemail.getText().toString());
         if (value && !edemail.getText().toString().equals("") || edemail.getText().toString().equals("")) {
-           checkHouseAddress();
-        }
-
-        else {
+            checkHouseAddress();
+        } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Please enter email correctly")
                     .setCancelable(false)
@@ -564,7 +573,7 @@ public class AddMemberActivity extends AppCompatActivity implements View.OnClick
     public void checkAadhar() {
         if (RgAadhar.getCheckedRadioButtonId() == R.id.RbAadharyes) {
             String check = editAadhar.getText().toString();
-            if (check.equals("") || check.length() < 10 || check.length() > 10) {
+            if (check.equals("") || check.length() < 12|| check.length() > 12) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setCancelable(false)
                         .setMessage("Please Specify Aadhar Id")
@@ -632,7 +641,7 @@ public class AddMemberActivity extends AppCompatActivity implements View.OnClick
     public void checkDl() {
         if (RgDl.getCheckedRadioButtonId() == R.id.RbDlyes) {
             String check = editDl.getText().toString();
-            if (check.equals("") || check.length() < 10 || check.length() > 10) {
+            if (check.equals("") || check.length() < 17 || check.length() > 18) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setCancelable(false)
                         .setMessage("Please Specify Dl Correctly")
@@ -851,6 +860,8 @@ public class AddMemberActivity extends AppCompatActivity implements View.OnClick
     public void showDataModel() {
         intent = new Intent(this, ShowMemberData.class);
         intent.putExtra("MemberDataModel", dataModel);
+        String key = reference.push().getKey();
+        reference.child(key).setValue(dataModel);
         startActivity(intent);
         finish();
     }

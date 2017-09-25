@@ -163,6 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_margin="@dimen/padding_10"
+                        android:layout_toRightOf="@+id/tviewHouseAddress"
                         android:padding="@dimen/input_padding"
                         android:textSize="@dimen/text_size" />
 
@@ -183,6 +184,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_below="@+id/tviewHouseAddressValue"
                         android:layout_margin="@dimen/padding_10"
+                        android:layout_toRightOf="@+id/tviewPincode"
                         android:padding="@dimen/input_padding"
                         android:textSize="@dimen/text_size" />
 
@@ -364,6 +366,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
+                        android:layout_toRightOf="@+id/tviewHighSchool"
                         android:layout_margin="@dimen/padding_10"
                         android:padding="@dimen/input_padding"
                         android:textSize="@dimen/text_size" />

@@ -6,10 +6,63 @@
     android:layout_height="match_parent"
     tools:context="com.example.abhirawat.yourfamily.MyAccountActivity">
 
+    <RelativeLayout
+        android:id="@+id/relativeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@color/header_color">
+        <!--
+
+                <TextView
+                    android:id="@+id/tviewdrawableHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:clickable="true"
+                    android:padding="@dimen/padding_10"
+                    android:text="@string/drawable_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />
+        -->
+        <TextView
+            android:id="@+id/tvBack"
+            android:layout_width="@dimen/width_50"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/backArrow"
+            android:textColor="@color/white"
+            android:textSize="@dimen/header_text_size" />
+
+        <TextView
+            android:id="@+id/tviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/my_account"
+            android:textColor="@color/white"
+            android:textSize="@dimen/header_text_size"
+            android:textStyle="bold" />
+        <!--
+                <TextView
+                    android:id="@+id/helpTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:clickable="true"
+                    android:padding="@dimen/padding_10"
+                    android:text="@string/help"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size"
+                    android:textStyle="bold" />-->
+    </RelativeLayout>
+
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeHeader">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cardExternal"
@@ -24,7 +77,6 @@
                 android:id="@+id/rlOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/margin_10"
                 android:background="@drawable/my_account_profile">
 
                 <de.hdodenhof.circleimageview.CircleImageView
@@ -32,6 +84,7 @@
                     android:layout_width="@dimen/image_profile"
                     android:layout_height="@dimen/image_profile"
                     android:padding="@dimen/padding_10"
+                    android:clickable="true"
                     android:src="@drawable/add_profile" />
 
                 <RelativeLayout
@@ -47,7 +100,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/padding_10"
-                        android:text="rawatabhi1994"
                         android:textColor="@color/white"
                         android:textSize="@dimen/header_text_size" />
 
@@ -74,7 +126,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/padding_10"
-                        android:text="8802427083"
                         android:textColor="@color/white"
                         android:textSize="@dimen/header_text_size" />
 
@@ -114,6 +165,16 @@
                         android:layout_toRightOf="@+id/profileEmail"
                         android:src="@drawable/edit" />
                 </RelativeLayout>
+
+                <Button
+                    android:id="@+id/buttonClearAccountDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rFour"
+                    android:layout_margin="@dimen/margin_10"
+                    android:layout_toRightOf="@+id/profileImage"
+                    android:background="@drawable/login_input"
+                    android:text="@string/clear_account" />
             </RelativeLayout>
         </android.support.v7.widget.CardView>
     </ScrollView>

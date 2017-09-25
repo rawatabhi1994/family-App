@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,6 +29,9 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     private String userNameValue;
     private String userContactValue;
     private String PasswordCheck;
+    private String gender;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +39,13 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_create_account);
         setViews();
         setClickListeners();
+        setReferences();
 
+    }
+
+    public void setReferences() {
+        firebaseDatabase = new FireBaseConnection().getFirebaseConnection();
+        databaseReference = firebaseDatabase.getInstance().getReference("USER_PROFILE");
     }
 
     public void setViews() {
@@ -148,6 +160,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         userAccountClass.setUserMobile(editMobile.getText().toString());
         userAccountClass.setPassword(editPassword.getText().toString());
         sharedPreferencesForMemberData.setUserAccount(this, userAccountClass);
+        databaseReference.child("Account").setValue(userAccountClass);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(false)
                 .setMessage("Your Account Has Been Made Please Login Now")

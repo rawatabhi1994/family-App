@@ -36,6 +36,13 @@ public class SharedPreferencesForMemberData {
         edit.clear();
     }
 
+    public void clearUserAccount(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(MEMBER_DATA, Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPref.edit();
+        edit.putString(ACCOUNT_HOLDER, "");
+        edit.commit();
+    }
+
     public void setUserAccount(Context context, UserAccountClass user) {
         Gson gson = new Gson();
         String userData = gson.toJson(user);

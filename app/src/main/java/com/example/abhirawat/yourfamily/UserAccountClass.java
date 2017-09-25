@@ -5,10 +5,12 @@ package com.example.abhirawat.yourfamily;
  */
 
 public class UserAccountClass {
+    private String profile;
     private String Gender;
     private String username;
     private String userMobile;
     private String password;
+    private String gmail;
 
     public String getGender() {
         return Gender;
@@ -40,5 +42,21 @@ public class UserAccountClass {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
+    public String getGmail() {
+        return gmail;
+    }
+
+    public void setGmail(String gmail) {
+        this.gmail = gmail;
     }
 }

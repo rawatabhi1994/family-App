@@ -9,7 +9,7 @@
     <dimen name="width_50">50dp</dimen>
     <dimen name="dimen_for_left_drawable">50dp</dimen>
     <dimen name="text_size">12sp</dimen>
-    <dimen name="header_text_size">15sp</dimen>
+    <dimen name="header_text_size">18sp</dimen>
     <dimen name="header_height">60dp</dimen>
     <dimen name="margin_from_header">50dp</dimen>
     <dimen name="input_padding">5dp</dimen>
