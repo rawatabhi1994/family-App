@@ -11,7 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -53,9 +56,8 @@ public class RecyclerViewForFamily extends RecyclerView.Adapter<RecyclerViewForF
         holder.Address.setText(address.getHouseAdress() + " \n  " + address.getState() + " \n  " + address.getPincode());
         ContactInfo contact = memberDataModel.getContact();
         holder.Contact.setText(contact.getPhoneNumber1() + "  \n " + contact.getPhoneNumber2());
-        if ((bitmap = memberDataModel.getImageBitmap()) != null) {
-            holder.profile.setImageBitmap(bitmap);
-        } else {
+        if (!memberDataModel.getImageURL().equals("")) {
+            Glide.with(context).load(memberDataModel.getImageURL()).into(holder.profile);
         }
     }
 
@@ -98,7 +100,7 @@ public class RecyclerViewForFamily extends RecyclerView.Adapter<RecyclerViewForF
                     showData.showDataAt(getAdapterPosition());
                     break;
                 case R.id.imageProfile:
-                    setProfile.setProfilePicActivity(view, getAdapterPosition(), view.getId());
+                    setProfile.setProfilePicActivity((ImageView)view, getAdapterPosition(), view.getId());
                     break;
             }
         }
@@ -113,6 +115,6 @@ public class RecyclerViewForFamily extends RecyclerView.Adapter<RecyclerViewForF
     }
 
     public interface SetProfile {
-        void setProfilePicActivity(View view, int position, int id);
+        void setProfilePicActivity(ImageView view, int position, int id);
     }
 }

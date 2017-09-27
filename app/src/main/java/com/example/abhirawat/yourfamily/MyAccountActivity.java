@@ -125,7 +125,7 @@ public class MyAccountActivity extends AppCompatActivity implements View.OnClick
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Seeting Profile Image");
+        progressDialog.setMessage("Setting Profile Image");
         progressDialog.show();
         if (requestCode == GALLERY_INTENT && resultCode == RESULT_OK) {
             Uri uri = data.getData();
@@ -135,8 +135,6 @@ public class MyAccountActivity extends AppCompatActivity implements View.OnClick
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     databaseReference.child("Account").child("profile").setValue(taskSnapshot.getDownloadUrl().toString());
                     progressDialog.dismiss();
-                    startActivity(new Intent(MyAccountActivity.this, MyAccountActivity.class));
-                    finish();
 
                 }
             }).addOnFailureListener(new OnFailureListener() {

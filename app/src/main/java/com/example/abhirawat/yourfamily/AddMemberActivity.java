@@ -573,7 +573,7 @@ public class AddMemberActivity extends AppCompatActivity implements View.OnClick
     public void checkAadhar() {
         if (RgAadhar.getCheckedRadioButtonId() == R.id.RbAadharyes) {
             String check = editAadhar.getText().toString();
-            if (check.equals("") || check.length() < 12|| check.length() > 12) {
+            if (check.equals("") || check.length() < 12 || check.length() > 12) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setCancelable(false)
                         .setMessage("Please Specify Aadhar Id")

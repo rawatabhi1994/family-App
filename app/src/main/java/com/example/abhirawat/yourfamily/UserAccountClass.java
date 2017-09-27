@@ -5,7 +5,7 @@ package com.example.abhirawat.yourfamily;
  */
 
 public class UserAccountClass {
-    private String profile;
+    private String profile = "";
     private String Gender;
     private String username;
     private String userMobile;

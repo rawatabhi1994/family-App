@@ -31,6 +31,6 @@ public class FamilyDao implements Serializable {
     public void setProfilePicAt(Bitmap bitmap, int pos)
     {
         MemberDataModel member = memberList.get(pos);
-        member.setImageBitmap(bitmap);
+
     }
 }

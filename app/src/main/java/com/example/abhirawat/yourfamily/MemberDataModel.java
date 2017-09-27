@@ -1,10 +1,6 @@
 package com.example.abhirawat.yourfamily;
 
-import android.graphics.Bitmap;
-import android.net.Uri;
-
 import java.io.Serializable;
-import java.net.URI;
 
 /**
  * Created by Abhi Rawat on 12-09-2017.
@@ -22,7 +18,7 @@ public class MemberDataModel implements Serializable {
     private ImportantId id;
     private EducationalQualification eduQualification;
     private EmploymentDetails empDetails;
-    private Bitmap imageBitmap;
+    private String imageURL = "";
 
     public String getFirstName() {
         return firstName;
@@ -112,10 +108,12 @@ public class MemberDataModel implements Serializable {
         this.empDetails = empDetails;
     }
 
-    public Bitmap getImageBitmap() {
-        return imageBitmap;}
 
-    public void setImageBitmap(Bitmap imageBitmap) {
-        this.imageBitmap= imageBitmap;
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }
