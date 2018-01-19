@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,11 +41,13 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
     String NAME = "Akash Bangad";
     String EMAIL = "akash.bangad@android4devs.com";
     int PROFILE = R.drawable.add_profile;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolbar = (Toolbar) findViewById(R.id.header_toolbar);
         viewMember = (CircleImageView) findViewById(R.id.circleViewMember);
         addMember = (CircleImageView) findViewById(R.id.circleViewAddMember);
         addPhotos = (CircleImageView) findViewById(R.id.circleViewAddPhotos);
@@ -68,6 +71,8 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
                 invalidateOptionsMenu();
             }
         };
+        setSupportActionBar(toolbar);
+
         leftDrawableList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -80,10 +85,14 @@ public class DataActivity extends AppCompatActivity implements View.OnClickListe
                 } else if (i == 4) {
                     finish();
                 }
+
             }
         });
-        leftDrawable.setDrawerListener(leftDrawableToggleListener);
+        leftDrawable.addDrawerListener(leftDrawableToggleListener);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        leftDrawableToggleListener.syncState();
     }
+
 
     public void setListeAdapterForDrawableList() {
         List<LeftDrawableClass> list = new ArrayList<LeftDrawableClass>();
